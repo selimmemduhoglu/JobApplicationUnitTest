@@ -1,7 +1,5 @@
-using JobApplication.Models;
 using JobApplication;
-using NuGet.Frameworks;
-using static JobApplication.ApplicationEvaluator;
+using JobApplication.Models;
 
 namespace JonApplicationLİbrary.UnitTest
 {
@@ -19,7 +17,7 @@ namespace JonApplicationLİbrary.UnitTest
         {
             // Arrange
 
-            var evaulator = new ApplicationEvaluator();
+            var evaulator = new ApplicationEvaluator(null);
             var form = new JobApplicationModel()
             {
                 Applicant = new Applicant()
@@ -28,7 +26,7 @@ namespace JonApplicationLİbrary.UnitTest
                 }
             };
 
-            // Action 
+            // Action
 
             ApplicationResult appResult = evaulator.Evaluate(form);
 
@@ -43,7 +41,7 @@ namespace JonApplicationLİbrary.UnitTest
         {
             // Arrange
 
-            var evaulator = new ApplicationEvaluator();
+            var evaulator = new ApplicationEvaluator(null);
             var form = new JobApplicationModel()
             {
                 Applicant = new Applicant()
@@ -53,7 +51,7 @@ namespace JonApplicationLİbrary.UnitTest
                 TechStackList = new System.Collections.Generic.List<string>() { string.Empty }
             };
 
-            // Action 
+            // Action
 
             ApplicationResult appResult = evaulator.Evaluate(form);
 
@@ -69,7 +67,7 @@ namespace JonApplicationLİbrary.UnitTest
         {
             // Arrange
 
-            var evaulator = new ApplicationEvaluator();
+            var evaulator = new ApplicationEvaluator(null);
             var form = new JobApplicationModel()
             {
                 Applicant = new Applicant()
@@ -87,7 +85,7 @@ namespace JonApplicationLİbrary.UnitTest
 
             };
 
-            // Action 
+            // Action
 
             ApplicationResult appResult = evaulator.Evaluate(form);
 

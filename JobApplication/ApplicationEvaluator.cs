@@ -5,6 +5,8 @@ namespace JobApplication;
 
 public class ApplicationEvaluator
 {
+    public IIdentityValidator identityValidator;
+
     private const int minAge = 18;
     private const int autoAcceptedYearOfExperience = 15;
 
@@ -16,12 +18,11 @@ public class ApplicationEvaluator
         "VisualStudio",
     ];
 
-    private IdentityValidator identityValidator;
-
-    public ApplicationEvaluator()
+    public ApplicationEvaluator(IIdentityValidator identityValidator)
     {
-        identityValidator = new IdentityValidator();
+        this.identityValidator = identityValidator;
     }
+
 
     public ApplicationResult Evaluate(JobApplicationModel form)
     {
